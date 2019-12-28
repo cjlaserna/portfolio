@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Catherine Laserna</title>
+    <meta name="description" content="This is an example of a meta description.">
+    <link rel="stylesheet" type="text/css" href="C:\Users\Catherine\Videos\portfolio\portfolio.css">
+    <meta name="author" content="Catherine">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="HandheldFriendly" content="true">
+    <meta content="catherine,web, design, video, editing, laserna, cjlaserna, coding, programming, portfolio, html, css, js, python, tutoring"name="keywords">
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Open+Sans:300|Press+Start+2P|Quicksand&display=swap" rel="stylesheet">	
+	<script>
+	    <!-- Rand Colors Func -->
+		function initRandColors(){
+			var pinkball_length, pinkballs, top, mid, numofCategories, categories, colors, temp;
+			colors = ["#ffb4fb", "#ffb4bc", "#e9b4ff", "#c6b4ff", "#b4bfff", "#b4efff", "#b4ffb9", "#c8ffb4", "#e5ffb4", "#ffe0b4", "#ffc3b4"];
+			top = document.getElementsByClassName("top")[0];
+			mid = document.getElementsByClassName("mid")[0];
+			
+			pinkball_length = document.querySelectorAll('.pinkball').length;
+			pinkballs = [];
+			
+			numofCategories = document.querySelectorAll('.category').length;
+			
+			
+			pushToList(pinkball_length, pinkballs, "pinkball");
+			
+
+			<!-- Special for categories -->
+			for (i = 0; i < numofCategories; i++){
+				temp = document.querySelectorAll('table .category');
+				console.log(temp.toString());
+				tempchildren = document.temp[0].children;
+				color = Math.floor(Math.random()*16777215).toString(16);
+				for (i of tempchildren){
+					i.style.backgroundColor = "#" + color;
+				}
+			}
+			
+			
+			<!-- end -->
+			randColor(pinkballs);
+			randColor(top);
+			randColor(mid);
+			
+		}
+		
+		function randColor(object){
+			var i, colors;
+			colors = ["#ffb4fb", "#ffb4bc", "#e9b4ff", "#c6b4ff", "#b4bfff", "#b4efff", "#b4ffb9", "#c8ffb4", "#e5ffb4", "#ffe0b4", "#ffc3b4"];
+			if ((Array.isArray(object)) == true) {
+				for (i of object){
+					i.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+				}
+			}else{
+			object.style.color = '#' + Math.floor(Math.random()*16777215).toString(16);
+			}
+		}
+		
+		<!-- Other Func -->
+		var i;
+		function pushToList(listlength, list, classname){
+			for (i = 0; i < listlength; i++) {
+				list.push(document.getElementsByClassName(classname)[i]);
+			}
+		}
+	</script>
+  </head>
+  <body>
+  <div class = "site">
+	  <div class= "header_wrapper">
+		<div class="header_insidewrapper">
+			<header>
+				<h1 class="title top">Catherine Laserna</h1>
+				<h1 class="title mid">Catherine Laserna</h1>
+				<h1 class="title bot">Catherine Laserna</h1>
+			</header>
+		</div>
+	  </div>
+		<div class="menu_wrapper">
+			<div class="menu"><menu>
+				<ul>
+				  <li><a href="#home">Catherine Laserna</a></li>
+				  <li><a href="#news">Work</a></li>
+				  <li><a href="#about">About</a></li>
+				  <li><a href="#contact">Contact</a></li>
+				</ul>
+			</menu>
+			</div>
+		</div>
+		<div class="content">
+			<div class ="skills programming">
+				<table>
+					<tr>
+					<th></th>
+					<th>Beginner</th>
+					<th>Elementary</th>
+					<th>Intermediate</th>
+					<th>Expert</th>
+					</tr>
+					<tr class= "category">
+						<th>HTML</th>
+						<td class="fill"></td>
+						<td class="fill"></td>
+						<td class="fill"></td>
+						<td class="fill"></td>
+					</tr>
+					<tr class= "category">
+						<th>CSS</th>
+						<td class="fill"></td>
+						<td class="fill"></td>
+						<td class="fill"></td>
+						<td></td>
+					</tr>
+					<tr class= "category">
+						<th>Javascript</th>
+						<td class="fill"></td>
+						<td class="fill"></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr class= "category">
+						<th>Python</th>
+						<td class="fill"></td>
+						<td class="fill"></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr class= "category">
+						<th>Java</th>
+						<td class="fill"></td>
+						<td class="fill"></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+			<div class="circlenav">
+				<div class="pinkball"><p>Programming</p></div>
+				<div class="pinkball"><p>Photoshop</p></div>
+				<div class="pinkball"><p>Video Creation</p></div>
+				<div class="pinkball"><p>General</p></div>
+			</div>
+		</div>
+	</div>
+  </body>
+  <script>
+	initRandColors();
+  </script>
+</html>

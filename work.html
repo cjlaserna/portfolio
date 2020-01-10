@@ -14,55 +14,6 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link href="https://fonts.googleapis.com/css?family=Unica+One|Open+Sans:300|Press+Start+2P|Quicksand&display=swap" rel="stylesheet">	
-		<script>
-			var programming, photoshop, video, languages, current, skillbars;
-			programming =  document.getElementsByClassName("programming")[0];
-			photoshop =  document.getElementsByClassName("photoshop")[0];
-			video =  document.getElementsByClassName("video")[0];
-			languages =  document.getElementsByClassName("languages")[0];
-			skillbars = ['programming','photoshop','video','languages'];
-			current = skillbars[0];
-			
-			function arrowRight(){
-				var tempIndex = skillbars.indexOf(current);
-				if ((tempIndex + 1) == skillbars.length){
-					var prevelement = document.getElementsByClassName(current)[0];
-					prevelement.style.display = "none";
-					current = skillbars[0];
-					var newelement = document.getElementsByClassName(current)[0];
-					newelement.style.display = "flex";
-				}else{
-					var prevelement = document.getElementsByClassName(current)[0];
-					prevelement.style.display = "none";
-					current = skillbars[tempIndex + 1];
-					var newelement = document.getElementsByClassName(current)[0];
-					newelement.style.display = "flex";
-				}
-			}
-			function arrowLeft(){
-				var tempIndex = skillbars.indexOf(current);
-				if ((tempIndex - 1) == -1){
-					var prevelement = document.getElementsByClassName(current)[0];
-					prevelement.style.display = "none";
-					temp = (skillbars.length) - 1;
-					current = skillbars[temp];
-					var newelement = document.getElementsByClassName(current)[0];
-					newelement.style.display = "flex";
-				}else{
-					var prevelement = document.getElementsByClassName(current)[0];
-					prevelement.style.display = "none";
-					current = skillbars[tempIndex - 1];
-					var newelement = document.getElementsByClassName(current)[0];
-					newelement.style.display = "flex";
-				}
-			}
-			function cardClicked(){
-				var conf = confirm("Would you like to download my resume?");
-				if (conf == true) {
-				  window.open( "https://github.com/cjlaserna/portfolio/raw/master/Resume.pdf", "_blank"); 
-				}
-			}
-		</script>
 	</head>
 	<body>
 			<header>

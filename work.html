@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Catherine Laserna</title>
+		<meta name="description" content="My online portfolio. .">
+		<link rel="stylesheet" type="text/css" href="C:\Users\Catherine\Videos\portfolio\portfolio.css">
+		<meta name="author" content="Catherine">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="HandheldFriendly" content="true">
+		<meta content="catherine,web, design, video, editing, laserna, cjlaserna, coding, programming, portfolio, html, css, js, python, tutoring" name="keywords">
+		<meta content="text/html; charset=utf-8" http-equiv="content-type">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Unica+One|Open+Sans:300|Press+Start+2P|Quicksand&display=swap" rel="stylesheet">	
+		<script>
+			var programming, photoshop, video, languages, current, skillbars;
+			programming =  document.getElementsByClassName("programming")[0];
+			photoshop =  document.getElementsByClassName("photoshop")[0];
+			video =  document.getElementsByClassName("video")[0];
+			languages =  document.getElementsByClassName("languages")[0];
+			skillbars = ['programming','photoshop','video','languages'];
+			current = skillbars[0];
+			
+			function arrowRight(){
+				var tempIndex = skillbars.indexOf(current);
+				if ((tempIndex + 1) == skillbars.length){
+					var prevelement = document.getElementsByClassName(current)[0];
+					prevelement.style.display = "none";
+					current = skillbars[0];
+					var newelement = document.getElementsByClassName(current)[0];
+					newelement.style.display = "flex";
+				}else{
+					var prevelement = document.getElementsByClassName(current)[0];
+					prevelement.style.display = "none";
+					current = skillbars[tempIndex + 1];
+					var newelement = document.getElementsByClassName(current)[0];
+					newelement.style.display = "flex";
+				}
+			}
+			function arrowLeft(){
+				var tempIndex = skillbars.indexOf(current);
+				if ((tempIndex - 1) == -1){
+					var prevelement = document.getElementsByClassName(current)[0];
+					prevelement.style.display = "none";
+					temp = (skillbars.length) - 1;
+					current = skillbars[temp];
+					var newelement = document.getElementsByClassName(current)[0];
+					newelement.style.display = "flex";
+				}else{
+					var prevelement = document.getElementsByClassName(current)[0];
+					prevelement.style.display = "none";
+					current = skillbars[tempIndex - 1];
+					var newelement = document.getElementsByClassName(current)[0];
+					newelement.style.display = "flex";
+				}
+			}
+			function cardClicked(){
+				var conf = confirm("Would you like to download my resume?");
+				if (conf == true) {
+				  window.open( "https://github.com/cjlaserna/portfolio/raw/master/Resume.pdf", "_blank"); 
+				}
+			}
+		</script>
+	</head>
+	<body>
+			<header>
+				<div class='overlay'>
+					<h1 class='title'>Catherine Laserna</h1>
+					<p class ='subtext'>Online Portfolio</p>
+				</div>
+			</header>
+			<div class="menu_wrapper">
+				<div class="menu"><menu>
+					<ul>
+					  <li><a href="https://cjlaserna.github.io/portfolio/" id="home">Catherine Laserna</a></li>
+					  <li><a href="https://cjlaserna.github.io/portfolio/work.html" class="menuitem">Work</a></li>
+					  <li><a href="https://cjlaserna.github.io/portfolio/about.html" class="menuitem">About</a></li>
+					  <li><a href="https://cjlaserna.github.io/portfolio/contact.html" class="menuitem">Contact</a></li>
+					</ul>
+				</menu>
+				</div>
+			</div>
+			<div class ="section_wrapper">
+			<div class = "section_title_container"><h1 class="section_title">My Work</h1></div>
+			<p class="subtext">Hover and click over the images for more project information.</p>
+				<section class="imgtext_layout" onclick="window.open('https://cjlaserna.github.io/birbuniverse/', '_blank');">
+					<div class="mockup_wrapper">
+						<div class="mockup_container">
+							<img src = "https://raw.githack.com/cjlaserna/portfolio/master/images/pengigamedesktopmockup.png" class="mockimg">
+							<img src = "https://raw.githack.com/cjlaserna/portfolio/master/images/pengigamemobilemockup.png?raw=true" class="mockimg mobile">
+						</div>
+						<div class ="text">
+							<h1>Birb Game</h1>
+							<p>Birb Game is a project a friend of mine started. The game and the site are both under development. The site is constantly updated with whatever new information I get. The site is just a static site hosted through Github. As the game develops, I plan on moving the site so that I can learn how to make websites with complex backend development.</p>
+						</div>
+					</div>
+				</section>
+				<section class="imgtext_layout" onclick="window.open('https://github.com/cjlaserna/vibecheckbot', '_blank');">
+					<div class="mockup_wrapper">
+						<div class="mockup_container">
+							<img src = "https://raw.githack.com/cjlaserna/portfolio/master/images/vibecheckbotdesktop.png?raw=true" class="mockimg">
+							<img src = "https://raw.githack.com/cjlaserna/portfolio/master/images/vibecheckbotmockupmobile.png?raw=true" class="mockimg mobile">
+						</div>
+						<div class ="text">
+							<h1>Vibe Check Bot</h1>
+							<p>Vibe Check Bot is a comedic purpose Discord bot. This was initially created as a joke, but I've expanded it's bot commands so that it can moderate profanity and pull images from Reddit. Bot commands are on a Github repository. The bot is hosted through Repl. Uptime Robot pings the bot so that it doesn't disconnect from Repl. All of the code is open for anyone to fork. Once I finish bot development, I plan on hosting the bot through a more traditional site. I used Discord Py to create the bot. For more in-depth explanation, visit it's Github repository through my profile. It has the code open for anyone to look at and the libraries I used at the bottom of the ReadME. </p>
+						</div>
+					</div>
+				</section>
+				<section class="imgtext_layout" onclick="window.open('https://github.com/cjlaserna/eclipsejavabackups', '_blank');">
+					<div class="mockup_wrapper">
+						<div class="mockup_container">
+							<img src = "https://raw.githack.com/cjlaserna/portfolio/master/images/breakoutdesktop%20(2).png" class="mockimg">
+							<img src = "https://raw.githack.com/cjlaserna/portfolio/master/images/breakout%20(2).png?raw=true" class="mockimg mobile">
+						</div>
+						<div class ="text">
+							<h1>Stanford CS106A Assignments</h1>
+							<p>I took a local 26-week class that taught highschool students Java with the book, the Art of Java. They utilized the online resources to teach the program. I was ahead of the class and I finished up to the Yahtzee assignment. Along with Yahtzee, major assignments I finished were Breakout and Hangman. I uploaded the Eclipse projects on a Github repository so that I can share my work with others and backup the assignments. </p>
+						</div>
+					</div>
+				</section>
+				<section class="imgtext_layout" onclick="window.open('https://github.com/cjlaserna/portfolio/tree/master/photoshopwork', '_blank');">
+					<div class="mockup_wrapper">
+						<div class="mockup_container">
+							<img src = "https://raw.githack.com/cjlaserna/portfolio/master/images/pscollage%20(2).png?raw=true" class="mockimg">
+						</div>
+						<div class ="text">
+							<h1>Photoshop Work</h1>
+							<p>Most of this work was done in class. I knew how to edit images before this since I used to make Youtube channel banners for people. However, I never used Adobe Photoshop since my family didn't have it. I used a combination of free image editing software to get what I wanted. When I took the class, I actually got to use Photoshop and I didn't have to do it just for Youtube banners. </p>
+						</div>
+					</div>
+				</section>
+				<section class="imgtext_layout" onclick="window.open('http://codenovate.org/ourteam.html', '_blank');">
+					<div class="mockup_wrapper">
+						<div class="mockup_container">
+							<img src = "https://raw.githack.com/cjlaserna/portfolio/master/images/codenovatework.png?raw=true" class="mockimg">
+						</div>
+						<div class ="text">
+							<h1>Codenovate Work</h1>
+							<p>I teach Python and AI to local peers at a community center every Saturday from 2-5pm. I was paid stipends and funded laptops for the students who attended.</p>
+						</div>
+					</div>
+				</section>
+			</div>
+			<footer>
+			<div class="footer_text_wrapper">
+			<p>This website is under development. It may not be responsive to mobile users.</p>
+			<p>Site information is found at my Github.</p>
+			</div>
+			<a href="https://www.linkedin.com/in/catherine-laserna-2a4a74183/" class="fa fa-linkedin"></a>
+			<a href="https://www.instagram.com/ahola.c/" class="fa fa-instagram"></a>
+			<a href="https://github.com/cjlaserna" class="fa fa-github"></a>
+			</footer>
+	</body>
+</html>

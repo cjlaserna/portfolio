@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Catherine Laserna</title>
+		<meta name="description" content="This is an example of a meta description.">
+		<link rel="stylesheet" type="text/css" href="C:\Users\Catherine\Videos\portfolio\portfolio.css">
+		<meta name="author" content="Catherine">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="HandheldFriendly" content="true">
+		<meta content="catherine,web, design, video, editing, laserna, cjlaserna, coding, programming, portfolio, html, css, js, python, tutoring" name="keywords">
+		<meta content="text/html; charset=utf-8" http-equiv="content-type">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Unica+One|Open+Sans:300|Press+Start+2P|Quicksand&display=swap" rel="stylesheet">	
+		<script>
+			var programming, photoshop, video, languages, current, skillbars;
+			programming =  document.getElementsByClassName("programming")[0];
+			photoshop =  document.getElementsByClassName("photoshop")[0];
+			video =  document.getElementsByClassName("video")[0];
+			languages =  document.getElementsByClassName("languages")[0];
+			skillbars = ['programming','photoshop','video','languages'];
+			current = skillbars[0];
+			
+			function arrowRight(){
+				var tempIndex = skillbars.indexOf(current);
+				if ((tempIndex + 1) == skillbars.length){
+					var prevelement = document.getElementsByClassName(current)[0];
+					prevelement.style.display = "none";
+					current = skillbars[0];
+					var newelement = document.getElementsByClassName(current)[0];
+					newelement.style.display = "flex";
+				}else{
+					var prevelement = document.getElementsByClassName(current)[0];
+					prevelement.style.display = "none";
+					current = skillbars[tempIndex + 1];
+					var newelement = document.getElementsByClassName(current)[0];
+					newelement.style.display = "flex";
+				}
+			}
+			function arrowLeft(){
+				var tempIndex = skillbars.indexOf(current);
+				if ((tempIndex - 1) == -1){
+					var prevelement = document.getElementsByClassName(current)[0];
+					prevelement.style.display = "none";
+					temp = (skillbars.length) - 1;
+					current = skillbars[temp];
+					var newelement = document.getElementsByClassName(current)[0];
+					newelement.style.display = "flex";
+				}else{
+					var prevelement = document.getElementsByClassName(current)[0];
+					prevelement.style.display = "none";
+					current = skillbars[tempIndex - 1];
+					var newelement = document.getElementsByClassName(current)[0];
+					newelement.style.display = "flex";
+				}
+			}
+			function cardClicked(){
+				var conf = confirm("Would you like to download my resume?");
+				if (conf == true) {
+				  window.open( "https://github.com/cjlaserna/portfolio/raw/master/Resume.pdf", "_blank"); 
+				}
+			}
+		</script>
+	</head>
+	<body>
+			<header>
+				<div class='overlay'>
+					<h1 class='title'>Catherine Laserna</h1>
+					<p class ='subtext'>Online Portfolio</p>
+				</div>
+			</header>
+			<div class="menu_wrapper">
+				<div class="menu"><menu>
+					<ul>
+					  <li><a href="#home" id="home">Catherine Laserna</a></li>
+					  <li><a href="#news" class="menuitem">Work</a></li>
+					  <li><a href="#about" class="menuitem">About</a></li>
+					  <li><a href="#contact" class="menuitem">Contact</a></li>
+					</ul>
+				</menu>
+				</div>
+			</div>
+			<div class = "skillbar_outer_wrapper">
+			<div class = "skillbar_wrapper">
+				<div class="arrow left" onclick="arrowLeft()"></div>
+				<div class = "skillbar_card_wrapper">
+					<article class="skillbar programming">
+						<h1>Programming</h1>
+							<div class ="skillbartable" onclick="cardClicked()">
+								<table>
+									<tr>
+									<th></th>
+									<th>Beginner</th>
+									<th>Elementary</th>
+									<th>Intermediate</th>
+									<th>Expert</th>
+									</tr>
+									<tr class= "category">
+										<th>HTML</th>
+										<td class="fill"></td>
+										<td class="fill"></td>
+										<td class="fill"></td>
+										<td class="fill"></td>
+									</tr>
+									<tr class= "category">
+										<th>CSS</th>
+										<td class="fill"></td>
+										<td class="fill"></td>
+										<td class="fill"></td>
+										<td></td>
+									</tr>
+									<tr class= "category">
+										<th>Javascript</th>
+										<td class="fill"></td>
+										<td class="fill"></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr class= "category">
+										<th>Python</th>
+										<td class="fill"></td>
+										<td class="fill"></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr class= "category">
+										<th>Java</th>
+										<td class="fill"></td>
+										<td class="fill"></td>
+										<td></td>
+										<td></td>
+									</tr>
+								</table>
+							</div>
+					</article>
+					<article class="skillbar photoshop">
+						<h1>Photo Editing</h1>
+							<div class ="skillbartable" onclick="cardClicked()">
+								<table>
+									<tr>
+									<th></th>
+									<th>Beginner</th>
+									<th>Elementary</th>
+									<th>Intermediate</th>
+									<th>Expert</th>
+									</tr>
+									<tr class= "category">
+										<th>Color</th>
+										<td class="fill"></td>
+										<td class="fill"></td>
+										<td class="fill"></td>
+										<td class="fill"></td>
+									</tr>
+									<tr class= "category">
+										<th>Layering</th>
+										<td class="fill"></td>
+										<td class="fill"></td>
+										<td class="fill"></td>
+										<td class="fill"></td>
+									</tr>
+									<tr class= "category">
+										<th>Retouch</th>
+										<td class="fill"></td>
+										<td class="fill"></td>
+										<td class="fill"></td>
+										<td></td>
+									</tr>
+									<tr class= "category">
+										<th>Patching</th>
+										<td class="fill"></td>
+										<td class="fill"></td>
+										<td class="fill"></td>
+										<td></td>
+									</tr>
+								</table>
+							</div>
+					</article>
+					<article class="skillbar video">
+						<h1>Video Creation</h1>
+							<div class ="skillbartable" onclick="cardClicked()">
+								<table>
+									<tr>
+									<th></th>
+									<th>Beginner</th>
+									<th>Elementary</th>
+									<th>Intermediate</th>
+									<th>Expert</th>
+									</tr>
+									<tr class= "category">
+										<th>OBS</th>
+										<td class="fill"></td>
+										<td class="fill"></td>
+										<td class="fill"></td>
+										<td class="fill"></td>
+									</tr>
+									<tr class= "category">
+										<th>Lightworks</th>
+										<td class="fill"></td>
+										<td class="fill"></td>
+										<td class="fill"></td>
+										<td></td>
+									</tr>
+									<tr class= "category">
+										<th>Vegas Pro</th>
+										<td class="fill"></td>
+										<td class="fill"></td>
+										<td></td>
+										<td></td>
+									</tr>
+								</table>
+							</div>
+					</article>
+					<article class="skillbar languages">
+						<h1>Languages</h1>
+							<div class ="skillbartable" onclick="cardClicked()">
+								<table>
+									<tr>
+									<th></th>
+									<th>Beginner</th>
+									<th>Elementary</th>
+									<th>Intermediate</th>
+									<th>Expert</th>
+									</tr>
+									<tr class= "category">
+										<th>Tagalog</th>
+										<td class="fill"></td>
+										<td class="fill"></td>
+										<td class="fill"></td>
+										<td class="fill"></td>
+									</tr>
+									<tr class= "category">
+										<th>English</th>
+										<td class="fill"></td>
+										<td class="fill"></td>
+										<td class="fill"></td>
+										<td class="fill"></td>
+									</tr>
+									<tr class= "category">
+										<th>Spanish</th>
+										<td class="fill"></td>
+										<td class="fill"></td>
+										<td></td>
+										<td></td>
+									</tr>
+								</table>
+							</div>
+					</article>
+				</div>
+				<div class="arrow right" onclick="arrowRight()"></div>
+			</div>
+			<p class="subtext">Click on the card to download my resume.</p>
+			</div>
+			<div class ="section_wrapper">
+			<div class = "section_title_container"><h1 class="section_title">Current Projects</h1></div>
+				<section class="imgtext_layout">
+					<div class="mockup_wrapper">
+						<div class="mockup_container">
+							<img src = "https://raw.githack.com/cjlaserna/portfolio/master/images/pengigamedesktopmockup.png" class="mockimg">
+							<img src = "https://raw.githack.com/cjlaserna/portfolio/master/images/pengigamemobilemockup.png?raw=true" class="mockimg mobile">
+						</div>
+						<div class ="text">
+							<h1>Birb Game</h1>
+							<p>A site I made for a friend. This game is a work in progress. The site is updated when needed</p>
+						</div>
+					</div>
+				</section>
+				<section class="imgtext_layout">
+					<div class="mockup_wrapper">
+						<div class="mockup_container">
+							<img src = "https://raw.githack.com/cjlaserna/portfolio/master/images/vibecheckbotdesktop.png?raw=true" class="mockimg">
+							<img src = "https://raw.githack.com/cjlaserna/portfolio/master/images/vibecheckbotmockupmobile.png?raw=true" class="mockimg mobile">
+						</div>
+						<div class ="text">
+							<h1>Vibe Check Bot</h1>
+							<p>A Discord bot created upon suggestion. This was initially created as a joke, but I've expanded it's bot commands so that it can moderate a server as well.</p>
+						</div>
+					</div>
+				</section>
+			</div>
+			<footer>
+			<div class="footer_text_wrapper">
+			<p>This website is under development. It may not be responsive to mobile users.</p>
+			<p>Site information is found at my Github.</p>
+			</div>
+			<a href="https://www.linkedin.com/in/catherine-laserna-2a4a74183/" class="fa fa-linkedin"></a>
+			<a href="https://www.instagram.com/ahola.c/" class="fa fa-instagram"></a>
+			<a href="https://github.com/cjlaserna" class="fa fa-github"></a>
+			</footer>
+	</body>
+</html>

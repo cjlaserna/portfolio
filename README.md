@@ -1,3 +1,3 @@
-# portfolio
+[Site Link](https://cjlaserna.github.io/portfolio/)
 
-The site is under development
+###Under Dev

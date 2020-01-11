@@ -15,10 +15,6 @@
     margin: 0;
     padding: 0;
 }
-.site {
-  position: relative;
-  min-height: 100vh;
-} 
 
 /* Reset CSS */
 button {
@@ -363,8 +359,6 @@ footer{
 	width: 100%;
 	display:block;
 	float:left;
-	position: absolute;
-	bottom: 0;
 	padding-top: 5px;
 	padding-bottom: 5px;
 }

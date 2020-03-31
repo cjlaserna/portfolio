@@ -6,7 +6,7 @@
 /* This stylesheet was made by Catherine Laserna */
 
 
-/* Date Last Updated: 03/30/2020 */
+/* Date Last Updated: 03/31/2020 */
 
 
 /* GENERAL */
@@ -551,3 +551,96 @@ a.fa:hover{
 }
 
 /* end of animations */
+
+@media screen and (max-width: 640px) {
+	header{
+		height: 50vh;
+	}
+	.title{
+		font-size: 10vw;
+	}
+	.subtext{
+		font-size: 5vw;
+	}
+	.menu_wrapper{
+		display:none;
+	}
+	.workbar_inner{
+		width:95%;
+		position:relative;
+		height: 45vh;
+	}
+	.workbar_wrapper{
+		position:relative;
+	}
+	.arrow_container{
+		position:absolute;
+		bottom: 50px;
+		color:white;
+		transform: scale(2);
+	}
+	.arrow_container span{
+		font-size: 3vw;
+	}
+	.right, .left{
+		width: 5vw;
+		height: 5vw;
+		border: 1px solid white;
+	}
+	.right:after, .left:after{
+		height:1.5vw;
+		width: 1.5vw;
+		border-top: 1px solid white;
+		border-right: 1px solid white;
+	}
+	.workbar h1{
+		font-size: 10vw;
+	}
+	.workbar.text{
+		display:flex;
+		opacity:1;
+		font-size: 10vw;
+	}
+	.workbar.text p{
+		position:absolute;
+		top: 50%;
+		display: flex;
+		font-size: 4vw;
+	}
+	.workbar.title h1{
+		position:absolute;
+		bottom: 50%;
+	} 
+	.workbar_inner:hover .workbar.title{
+		opacity: 1;
+	}
+	.about-wrapper{
+		width: 95vw;
+		flex-direction:column;
+	}
+	.aboutbox{
+		width: 95%;
+		height: 25vh;
+		display: flex;
+		justify-content:center;
+		align-items:center;
+		flex-direction:column;
+	}
+	.aboutbox h1{
+		font-size: 10vw;
+		position:absolute;
+		top: 40%;
+	}
+	.aboutbox p{
+		position: absolute;
+		font-size:4vw;
+		top: 40%;
+	}
+	.aboutbox:hover{
+		width:95%;
+		height: 50vh;
+	}
+	.aboutbox:hover h1{
+		top: 30%;
+	}
+}

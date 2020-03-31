@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Catherine Laserna</title>
-		<meta name="description" content="My online portfolio.">
-		<link rel="stylesheet" type="text/css" href="https://raw.githack.com/cjlaserna/portfolio/master/index.css">
+		<meta name="description" content="My online portfolio. .">
+		<link rel="stylesheet" type="text/css" href="https://raw.githack.com/cjlaserna/portfolio/master/index.cs">
 		<meta name="author" content="Catherine">
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -15,15 +15,15 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link href="https://fonts.googleapis.com/css?family=Unica+One|Open+Sans:300|Press+Start+2P|Quicksand&display=swap" rel="stylesheet">	
 		<script>
-			var programming, photoshop, video, languages, current, skillbars;
-			programming =  document.getElementsByClassName("programming")[0];
-			photoshop =  document.getElementsByClassName("photoshop")[0];
-			video =  document.getElementsByClassName("video")[0];
-			languages =  document.getElementsByClassName("languages")[0];
-			skillbars = ['programming','photoshop','video','languages'];
+			var birb, vcb, expos, current, skillbars;
+			birb =  document.getElementsByClassName("birb")[0];
+			vcb =  document.getElementsByClassName("vcb")[0];
+			expos =  document.getElementsByClassName("expos")[0];
+			skillbars = ['birb','vcb','expos'];
 			current = skillbars[0];
 			
 			function arrowRight(){
+				
 				var tempIndex = skillbars.indexOf(current);
 				if ((tempIndex + 1) == skillbars.length){
 					var prevelement = document.getElementsByClassName(current)[0];
@@ -31,14 +31,36 @@
 					current = skillbars[0];
 					var newelement = document.getElementsByClassName(current)[0];
 					newelement.style.display = "flex";
+					<!-- newelement.classList.add("slide-right"); -->
+					<!-- newelement.classList.remove("slide-left"); -->
+					replacedots(current);
+					<!-- setTimeout(function(){ element.style.webkitAnimationPlayState="paused";}, 500); -->
 				}else{
 					var prevelement = document.getElementsByClassName(current)[0];
 					prevelement.style.display = "none";
 					current = skillbars[tempIndex + 1];
 					var newelement = document.getElementsByClassName(current)[0];
 					newelement.style.display = "flex";
+					<!-- newelement.classList.add("slide-right"); -->
+					<!-- newelement.classList.remove("slide-left"); -->
+					replacedots(current);
+					<!-- setTimeout(function(){ element.style.webkitAnimationPlayState="paused";}, 500); -->
 				}
 			}
+			function replacedots(current){
+				var workdotstr = ""
+				for(i = 0; i < skillbars.length; i++){
+					var checking = skillbars[i];
+					if (checking == current){
+						workdotstr += "&#9679 "
+					}
+					else{
+						workdotstr += "&#9675 "
+					}
+				}
+				document.getElementById("workdots").innerHTML = workdotstr;
+			}
+	
 			function arrowLeft(){
 				var tempIndex = skillbars.indexOf(current);
 				if ((tempIndex - 1) == -1){
@@ -48,14 +70,29 @@
 					current = skillbars[temp];
 					var newelement = document.getElementsByClassName(current)[0];
 					newelement.style.display = "flex";
+					<!-- newelement.classList.add("slide-left") -->
+					<!-- newelement.classList.remove("slide-right") -->
+					replacedots(current);
+					<!-- setTimeout(function(){ element.style.webkitAnimationPlayState="paused";}, 500); -->
 				}else{
 					var prevelement = document.getElementsByClassName(current)[0];
 					prevelement.style.display = "none";
 					current = skillbars[tempIndex - 1];
 					var newelement = document.getElementsByClassName(current)[0];
 					newelement.style.display = "flex";
+					<!-- newelement.classList.add("slide-left"); -->
+					<!-- newelement.classList.remove("slide-right"); -->
+					replacedots(current);
+					<!-- setTimeout(function(){ element.style.webkitAnimationPlayState="paused";}, 500); -->
 				}
 			}
+			
+			function resetanimations(element){
+				<!-- element.classList.remove("slide-left"); -->
+				<!-- element.classList.remove("slide-right"); -->
+				<!-- element.style.webkitAnimationPlayState="running"; -->
+			}
+			
 			function cardClicked(){
 				var conf = confirm("Would you like to download my resume?");
 				if (conf == true) {
@@ -65,232 +102,92 @@
 		</script>
 	</head>
 	<body>
-		<div class="alert">
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-  This site isn't responsive yet. It may not be ideal to view this site on a mobile device.
-</div>
 			<header>
 				<div class='overlay'>
 					<h1 class='title'>Catherine Laserna</h1>
-					<p class ='subtext'>Self-Taught Programmer</p>
+					<p class ='subtext'>High School Online Portfolio</p>
 				</div>
 			</header>
 			<div class="menu_wrapper">
 				<div class="menu"><menu>
 					<ul>
 					  <li><a href="https://cjlaserna.github.io/portfolio/" id="home">Catherine Laserna</a></li>
-					  <li><a href="https://cjlaserna.github.io/portfolio/work.html" class="menuitem">Work</a></li>
-					  <li><a href="https://cjlaserna.github.io/portfolio/about.html" class="menuitem">About</a></li>
-					  <li><a href="https://cjlaserna.github.io/portfolio/contact.html" class="menuitem">Contact</a></li>
+					  <li><a href="#work" class="menuitem">Work</a></li>
+					  <li><a href="#about" class="menuitem">About</a></li>
+					  <li><a href="#contact" class="menuitem">Contact</a></li>
 					</ul>
 				</menu>
 				</div>
 			</div>
-			<div class = "skillbar_outer_wrapper">
-			<div class = "skillbar_wrapper">
-				<div class="arrow left" onclick="arrowLeft()"></div>
-				<div class = "skillbar_card_wrapper">
-					<article class="skillbar programming">
-						<h1>Programming</h1>
-							<div class ="skillbartable" onclick="cardClicked()">
-								<table>
-									<tr>
-									<th></th>
-									<th>Beginner</th>
-									<th>Elementary</th>
-									<th>Intermediate</th>
-									<th>Expert</th>
-									</tr>
-									<tr class= "category">
-										<th>HTML</th>
-										<td class="fill"></td>
-										<td class="fill"></td>
-										<td class="fill"></td>
-										<td class="fill"></td>
-									</tr>
-									<tr class= "category">
-										<th>CSS</th>
-										<td class="fill"></td>
-										<td class="fill"></td>
-										<td class="fill"></td>
-										<td></td>
-									</tr>
-									<tr class= "category">
-										<th>Javascript</th>
-										<td class="fill"></td>
-										<td class="fill"></td>
-										<td></td>
-										<td></td>
-									</tr>
-									<tr class= "category">
-										<th>Python</th>
-										<td class="fill"></td>
-										<td class="fill"></td>
-										<td></td>
-										<td></td>
-									</tr>
-									<tr class= "category">
-										<th>Java</th>
-										<td class="fill"></td>
-										<td class="fill"></td>
-										<td></td>
-										<td></td>
-									</tr>
-								</table>
+				<div class="workbar_wrapper" id="work">
+					<div class="workbar_inner">
+						<div class="workbar_img birb" onmouseover="resetanimations(this)">
+							<div class="workbar">
+								<article class="workbar birb">
+									<div class="workbar title">
+										<h1>Birb Game</h1>
+									</div>
+									<div class="workbar text">
+										<p>This is a site I made for a friend. The site is updated when needed and the game is a work in progress.</p>
+									</div>
+								</article>
 							</div>
-					</article>
-					<article class="skillbar photoshop">
-						<h1>Photo Editing</h1>
-							<div class ="skillbartable" onclick="cardClicked()">
-								<table>
-									<tr>
-									<th></th>
-									<th>Beginner</th>
-									<th>Elementary</th>
-									<th>Intermediate</th>
-									<th>Expert</th>
-									</tr>
-									<tr class= "category">
-										<th>Color</th>
-										<td class="fill"></td>
-										<td class="fill"></td>
-										<td class="fill"></td>
-										<td class="fill"></td>
-									</tr>
-									<tr class= "category">
-										<th>Layering</th>
-										<td class="fill"></td>
-										<td class="fill"></td>
-										<td class="fill"></td>
-										<td class="fill"></td>
-									</tr>
-									<tr class= "category">
-										<th>Retouch</th>
-										<td class="fill"></td>
-										<td class="fill"></td>
-										<td class="fill"></td>
-										<td></td>
-									</tr>
-									<tr class= "category">
-										<th>Patching</th>
-										<td class="fill"></td>
-										<td class="fill"></td>
-										<td class="fill"></td>
-										<td></td>
-									</tr>
-								</table>
+						</div>
+						<div class="workbar_img vcb" onmouseover="resetanimations(this)">
+							<div class="workbar">
+								<article class="workbar vcb">
+									<div class="workbar title">
+										<h1>VCB</h1>
+									</div>
+									<div class="workbar text">
+										<p>This Discord Bot, originally made as a joke, has numerous uses. Explore it's many different functions.</p>
+									</div>
+								</article>
 							</div>
-					</article>
-					<article class="skillbar video">
-						<h1>Video Creation</h1>
-							<div class ="skillbartable" onclick="cardClicked()">
-								<table>
-									<tr>
-									<th></th>
-									<th>Beginner</th>
-									<th>Elementary</th>
-									<th>Intermediate</th>
-									<th>Expert</th>
-									</tr>
-									<tr class= "category">
-										<th>OBS</th>
-										<td class="fill"></td>
-										<td class="fill"></td>
-										<td class="fill"></td>
-										<td class="fill"></td>
-									</tr>
-									<tr class= "category">
-										<th>Lightworks</th>
-										<td class="fill"></td>
-										<td class="fill"></td>
-										<td class="fill"></td>
-										<td></td>
-									</tr>
-									<tr class= "category">
-										<th>Vegas Pro</th>
-										<td class="fill"></td>
-										<td class="fill"></td>
-										<td></td>
-										<td></td>
-									</tr>
-								</table>
+						</div>
+						<div class="workbar_img expos" onmouseover="resetanimations(this)">
+							<div class="workbar">
+								<article class="workbar expos">
+									<div class="workbar title">
+										<h1>Workshops/Exposure Work</h1>
+									</div>
+									<div class="workbar text">
+										<p>I taught a 10 week program on Python and AI to students my age. I hosted a workshop at Fresno that was heavily based on NLP. I am helping students learn to modify in-game elements in Minecraft with Python.</p>
+									</div>
+								</article>
 							</div>
-					</article>
-					<article class="skillbar languages">
-						<h1>Languages</h1>
-							<div class ="skillbartable" onclick="cardClicked()">
-								<table>
-									<tr>
-									<th></th>
-									<th>Beginner</th>
-									<th>Elementary</th>
-									<th>Intermediate</th>
-									<th>Expert</th>
-									</tr>
-									<tr class= "category">
-										<th>Tagalog</th>
-										<td class="fill"></td>
-										<td class="fill"></td>
-										<td class="fill"></td>
-										<td class="fill"></td>
-									</tr>
-									<tr class= "category">
-										<th>English</th>
-										<td class="fill"></td>
-										<td class="fill"></td>
-										<td class="fill"></td>
-										<td class="fill"></td>
-									</tr>
-									<tr class= "category">
-										<th>Spanish</th>
-										<td class="fill"></td>
-										<td class="fill"></td>
-										<td></td>
-										<td></td>
-									</tr>
-								</table>
-							</div>
-					</article>
+						</div>
+					</div>
+					<div class="arrow_container">
+						<div class="arrow left" onclick="arrowLeft()"></div>
+						<span id="workdots" >&#9679 &#9675 &#9675 </span>
+						<div class="arrow right" onclick="arrowRight()"></div>
+					</div>
 				</div>
-				<div class="arrow right" onclick="arrowRight()"></div>
-			</div>
-			<p class="subtext">Click on the card to download my resume.</p>
-			</div>
-			<div class ="section_wrapper">
-			<div class = "section_title_container"><h1 class="section_title">Current Projects</h1></div>
-				<section class="imgtext_layout" onclick="window.open('https://cjlaserna.github.io/birbuniverse/', '_blank');">
-					<div class="mockup_wrapper">
-						<div class="mockup_container">
-							<img src = "https://raw.githack.com/cjlaserna/portfolio/master/images/pengigamedesktopmockup.png" class="mockimg">
-							<img src = "https://raw.githack.com/cjlaserna/portfolio/master/images/pengigamemobilemockup.png?raw=true" class="mockimg mobile">
+				<div class="about-outer">
+					<div class="about-wrapper" id="about">
+						<div class="aboutbox prsnl" onmouseover="this.classList.add('abtactive')" onmouseout="this.classList.remove('abtactive')">
+							<h1>About Me</h1>
+							<p> - I am a rising junior in highschool. For the most part, I'm self-taught. I've been honing my programming skills since I was eight-years-old. <br> 
+							- My immersion within internet culture continously motivates me to stick to programming. I learned how to make my (very bad) first website when I was eight and wanted to recreate an online Disney game.</p>
 						</div>
-						<div class ="text">
-							<h1>Birb Game</h1>
-							<p>A site I made for a friend. This game is a work in progress. The site is updated when needed</p>
+						<div class="aboutbox skill" onmouseover="this.classList.add('abtactive')" onmouseout="this.classList.remove('abtactive')">
+							<h1>Skills</h1>
+							<p>- I speak fluent Tagalog and English. I'm learning Spanish. <br>
+							- I am capable of using Google Suite products and Photoshop. <br>
+							- I can create websites and programs with CSS, HTML, Python, and Java.<br>
+							- For fun, I play video games and edit Youtube videos.</p>
 						</div>
 					</div>
-				</section>
-				<section class="imgtext_layout" onclick="window.open('https://github.com/cjlaserna/vibecheckbot', '_blank');">
-					<div class="mockup_wrapper">
-						<div class="mockup_container">
-							<img src = "https://raw.githack.com/cjlaserna/portfolio/master/images/vibecheckbotdesktop.png?raw=true" class="mockimg">
-							<img src = "https://raw.githack.com/cjlaserna/portfolio/master/images/vibecheckbotmockupmobile.png?raw=true" class="mockimg mobile">
-						</div>
-						<div class ="text">
-							<h1>Vibe Check Bot</h1>
-							<p>A Discord bot created upon suggestion. This was initially created as a joke, but I've expanded it's bot commands so that it can moderate a server as well.</p>
-						</div>
+				</div>
+				<div class="contact-outer">
+					<div class="contact-wrapper" id="contact">
+						<a href="https://www.linkedin.com/in/catherine-laserna-2a4a74183/" class="fa fa-linkedin"></a>
+						<a href="https://www.instagram.com/ahola.c/" class="fa fa-instagram"></a>
+						<a href="https://github.com/cjlaserna" class="fa fa-github"></a>
+						<a href="mailto:clasernaj@gmail.com" class="fa fa-envelope"></a>
 					</div>
-				</section>
-			</div>
-			<footer>
-			<div class="footer_text_wrapper">
-			<p>This website is under development. It may not be responsive to mobile users.</p>
-			<p>Site information is found at my Github.</p>
-			</div>
-			<a href="https://www.linkedin.com/in/catherine-laserna-2a4a74183/" class="fa fa-linkedin"></a>
-			<a href="https://www.instagram.com/ahola.c/" class="fa fa-instagram"></a>
-			<a href="https://github.com/cjlaserna" class="fa fa-github"></a>
-			</footer>
+					<p class="contact-text"> Contact me at clasernaj@gmail.com </p>
+				</div>
 	</body>
 </html>

@@ -574,24 +574,28 @@ a.fa:hover{
 		position:relative;
 	}
 	.arrow_container{
-		position:absolute;
-		bottom: 50px;
-		color:white;
+		/* position:absolute; */
+		/* bottom: 50px; */
+		opacity:1;
+		transition: all .2s;
 		transform: scale(2);
+	}
+	.workbar_inner:focus .left{
+		opacity: 1;
+		display:flex;
+		z-index:9;
 	}
 	.arrow_container span{
 		font-size: 3vw;
+		text-shadow: 1px 1px rgba(0, 0, 0, 0.35);
 	}
 	.right, .left{
 		width: 5vw;
 		height: 5vw;
-		border: 1px solid white;
 	}
 	.right:after, .left:after{
 		height:1.5vw;
 		width: 1.5vw;
-		border-top: 1px solid white;
-		border-right: 1px solid white;
 	}
 	.workbar h1{
 		font-size: 10vw;
@@ -605,7 +609,7 @@ a.fa:hover{
 		position:absolute;
 		top: 50%;
 		display: flex;
-		font-size: 2.5vh;
+		font-size: 4vw;
 	}
 	.workbar.title h1{
 		position:absolute;

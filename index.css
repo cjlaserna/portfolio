@@ -6,38 +6,16 @@
 /* This stylesheet was made by Catherine Laserna */
 
 
-/* Date Last Updated: 12/27/2019 */
+/* Date Last Updated: 03/30/2020 */
 
 
 /* GENERAL */
-/* The alert message box */
-.alert {
-  padding: 20px;
-  background-color: #f44336; /* Red */
-  color: white;
-  margin-bottom: 15px;
-}
 
-/* The close button */
-.closebtn {
-  margin-left: 15px;
-  color: white;
-  font-weight: bold;
-  float: right;
-  font-size: 22px;
-  line-height: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-/* When moving the mouse over the close button */
-.closebtn:hover {
-  color: black;
-}
 * {
     margin: 0;
     padding: 0;
 }
+
 
 /* Reset CSS */
 button {
@@ -72,9 +50,15 @@ a:active{
 h1{
 	font-family:'Quicksand', sans-serif; 
 	font-size: 2vw;
+	font-weight:lighter;
 }
 
 p{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.5vw;
+	font-weight: 600;
+}
+span{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 1.5vw;
 	font-weight:bold;
@@ -175,76 +159,119 @@ header{
 }
 /* end of menu */
 
-/* skillbar */
-.skillbar_outer_wrapper{
+/* workbar */
+
+.workbar_wrapper{
 	width:100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
+	flex-direction:column;
 }
-.skillbar {
-	display: none;
-}
-.skillbar.programming{
-	display: flex;
-}
-.skillbar.photostop{
-	display: none;
-}.skillbar.video{
-	display: none;
-}.skillbar.languages{
-	display: none;
-}
-.skillbar_wrapper{
-	width:100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.skillbar_card_wrapper{
-	width: 50%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-}
-.skillbar{
+.workbar_inner{
 	width: 45%;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-}
-table{
-	width: 100%;
-	margin:5px;
-	padding: 10px;
-	color: #222222;
-	border-radius: 10px;
-	-webkit-transition: box-shadow 0.4s;
-	transition: box-shadow 0.4s;
-	transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
-	background-color: #F5F5F5;
-}
-table:hover{
-	-webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+	height: 20vw;
+	overflow:hidden;
+	padding: 5px;
+	margin: 10px;
+	transition: all .2s;
+	border-radius: 15px;
 	cursor: pointer;
 }
-th, td{
-	width: 10vw;
-	padding: .5vw;
-	border: none;
+.workbar_img{
+	width:100%;
+	height:100%;
+	border-radius: 15px;
+	overflow:hidden;
+	transition: all .5s;
+	box-shadow: 2px 2px rgba(0, 0, 0, 0.35);
+	
+	background-color: #a4508b;
+	background-size: cover;
+	background-position: center bottom;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
-th{
-	font-family: 'Open Sans', sans-serif; 
+.workbar_img:before{
+	content: "";
+	display: none;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+.workbar{
+	color:white;
+	width:100%;
+	transition: all .2s;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.workbar.title{
+	display: flex;
+	z-index: 9;
+	opacity: 1;
+	position: absolute;
+}
+.workbar.text{
+	display:flex;
+	z-index:9;
+	width:50%;
+	opacity:0;
+	position: absolute;
+}
+.workbar.text p{
 	font-size: 1vw;
 }
-.fill{
-	background-color: black;
+.workbar_inner:hover .workbar_img{
+	transform: scale(1.2);
 }
-
-/* skillbar arrows */
+.workbar_inner:hover .workbar_img:before{
+	display: block;
+}
+.workbar_inner:hover .workbar.title{
+	opacity:0;
+}
+.workbar_inner:hover .workbar.text{
+	opacity: 1
+}
+.workbar_img.birb{
+	display:flex;
+	background-color: #a4508b;
+	background-image: linear-gradient(326deg, rgba(164, 80, 139, 0.52) 0%, rgba(95, 10, 135, 0.52) 74%), url('https://raw.githack.com/cjlaserna/portfolio/master/images/pengigamedesktopmockup.png');
+}
+.workbar.birb {
+	display:flex;
+}
+.workbar_img.vcb{
+	display:none;
+	background-color: #a4508b;
+	background-image: linear-gradient(326deg, rgba(164, 80, 139, 0.52) 0%, rgba(95, 10, 135, 0.52) 74%), url('https://raw.githack.com/cjlaserna/portfolio/master/images/vibecheckbotdesktop.png?raw=true');
+}
+.workbar_img.expos{
+	display:none;
+	background-color: #a4508b;
+	background-image: linear-gradient(326deg, rgba(164, 80, 139, 0.52) 0%, rgba(95, 10, 135, 0.52) 74%), url('https://raw.githack.com/cjlaserna/portfolio/master/images/teachingai.png?raw=true');
+	background-position:center;
+}
+/* workbar arrows */
+.arrow_container{
+	width:45vw;
+	text-align: center;
+}
+.arrow_container span{
+	display:inline-block;
+	font-weight: lighter;
+	font-size: 1.75vw;
+	text-shadow: 2px 2px rgba(0, 0, 0, 0.35);
+}
 .right {
 	display:inline-block;
 	position:relative;
@@ -252,6 +279,7 @@ th{
 	height: 2vw;
 	border: 1px solid #222;
 	border-radius: 50%;
+	float:right;
 }
 
 .right:after {
@@ -277,6 +305,7 @@ th{
 	height: 2vw;
 	border: 1px solid #222;
 	border-radius: 50%;
+	float:left;
 }
 
 .left:after {
@@ -297,10 +326,13 @@ th{
 .arrow{
 	background-color:transparent;
 	transition: background-color 0.35s;
+	transition: box-shadow 0.2s;
+	box-shadow: 2px 2px rgba(0, 0, 0, 0.35);
 }
 .arrow:hover{
 	cursor:pointer;
-	background-color: #222;
+	background-color: #22002e;
+	box-shadow: 2px 2px rgba(0, 0, 0, .8);
 }
 .left:hover:after{
 	border-right-color: white;
@@ -310,97 +342,117 @@ th{
 	border-right-color: white;
 	border-top-color: white;
 }
+/* end of workbar */
 
-/* end of skillbar */
 
-/* browser mockups */
-.imgtext_layout{
-	position:relative;
-	display: flex;
-	justify-content: center;
-	align-items:center;
-	width:100%;
-}
-.imgtext_layout .text{
-	position:absolute;
-	background-color: rgba(0,0,0,0.5);
-	width: 80%;
-	opacity: 0;
-	height: 60%;
-	color:white;
-	border-radius:5px;
-	padding: 10px;
-	text-shadow: 2px 2px #222;
-	transition: 0.2s;
-}
-.imgtext_layout .text p{
-	font-size: 1vw;
-	
-}
-.mockup_wrapper{
-	padding: 10px;
-	width:50%;
-	transition: box-shadow 0.4s;
-	transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
-	position:relative;	
-	margin: 20px;
-	background-color: #F5F5F5;
-	border-radius: 10px;
-	display: flex;
-	justify-content: center;
+/* about */
+.about-outer{
+	width: 100%;
+	display:flex;
 	align-items: center;
+	justify-content:center;
+	flex-direction:column;
 }
-.mockup_wrapper:hover{
-	box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+.about-wrapper{
+	width: 50vw;
+	display:flex;
+	align-items: center;
+	justify-content:center;
+}
+.aboutbox{
+	box-shadow: 2px 2px rgba(0, 0, 0, 0.35);
+	width: 45%;
+	height: 20vw;
+	background-color: #a4508b;
+	background-image: linear-gradient(326deg, rgba(164, 80, 139, 0.52) 0%, rgba(95, 10, 135, 0.52) 74%);
+	border-radius:15px;
+	
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 5px;
+	margin-right:5px;
+	padding:10px;
+	
+	transition: all .2s;
 	cursor: pointer;
-}
-.mockup_wrapper:hover .text{
-	opacity:1;
-}
-.mockup_container{
-	width: 80%;
-}
-.mockimg{
-	width: 100%;
-	border-radius:5px;
 	position:relative;
+	
+	display:flex;
+	align-items: center;
+	justify-content:center;
+	flex-direction:column;
 }
-.mockimg.mobile{
-	position:absolute;
-	border-radius:5px;
-	top: 30px;
-	right:30px;
-	box-shadow: -5px 8px #222;
-	width: 20%;
-}
-/* end of browser mockups */
 
-/* footer */
-footer{
-	vertical-align: bottom;
-	background-color: #39375b;
-	width: 100%;
-	display:block;
+.aboutbox h1{
+	color:white;	
+	text-shadow: 2px 2px rgba(0, 0, 0, 0.35);
+	transition: all .2s;
+	position: absolute;
+	top: 45%;
+	height:calc(100%-45%);
+}
+.prsnl{
+	background-position:top left;
+	background-image: linear-gradient(326deg, rgba(164, 80, 139, 0.52) 0%, rgba(95, 10, 135, 0.52) 74%), url('https://raw.githack.com/cjlaserna/portfolio/master/images/2019-12-08.jpg?raw=true');
+}
+.prsnl:hover{
+	background-image: linear-gradient(326deg, rgba(164, 80, 139, 0.75) 0%, rgba(95, 10, 135, 0.75) 74%), url('https://raw.githack.com/cjlaserna/portfolio/master/images/2019-12-08.jpg?raw=true');
+}
+.skill{
+	background-position:center;
+	background-image: linear-gradient(326deg, rgba(164, 80, 139, 0.52) 0%, rgba(95, 10, 135, 0.52) 74%), url('https://raw.githack.com/cjlaserna/portfolio/master/images/poster.jpg?raw=true');
+}
+.skill:hover{
+	background-position:center;
+	background-image: linear-gradient(326deg, rgba(164, 80, 139, 0.75) 0%, rgba(95, 10, 135, 0.75) 74%), url('https://raw.githack.com/cjlaserna/portfolio/master/images/poster.jpg?raw=true');
+}
+.aboutbox p{
+	color:white;
+	text-shadow: 2px 2px rgba(0, 0, 0, 0.35);
+	margin: 15px;
+	font-size: 1vw;
+	font-weight: 500;
+	position:absolute;
+	top: 15%;
+	opacity:0;
+	transition: all .1s;
+}
+.aboutbox:hover{
+	width:50vw;
+}
+.abtactive h1{
+	top: 5%;
+}
+.abtactive p{
+	opacity: 1;
 	float:left;
-	padding-top: 5px;
-	padding-bottom: 5px;
 }
-footer a{
-	margin: 2px;
-	float: right;
-	font-size: 100px;
-	color:white;
+/* end of about */
+
+/* Contact */
+.contact-outer{
+	width:100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	flex-direction:column;
+	background-image: linear-gradient(326deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 74%), url('https://spark.adobe.com/page/2mRk3T88V5tEi/images/3bb8070d-c932-4bd8-a346-7a55e1c6900c.jpg?asset_id=4cdc889b-7be8-4598-bc8b-ed22bf88c6c4&img_etag=4e034120a63854b9de4cfdfa8d5c2291&size=2560');
+	background-position:center;
+	background-attachment:fixed;
 }
-footer a:visited{
-	color:white;
-}
-footer a:active{
-	color:white;
+.contact-wrapper{
+	display:flex;
+	align-items:center;
+	justify-content:center;
 }
 .fa{
 	padding: 10px;
-	width: 20px;
-	height: 20px;
+	width: 25px;
+	height: 25px;
+	margin-left:10px;
+	margin-right: 10px;
+	margin-top: 3px;
+	margin-bottom: 3px;
 	text-align: center;
 	text-decoration: none;
 	border-radius: 50%;
@@ -408,21 +460,94 @@ footer a:active{
 	color:white;
 	transition: background-color 0.3s, color 0.3s;
 }
-.footer_text_wrapper{
-	float:left;
+a.fa{
+	color:white;
+	font-size: 25px;
+	transition: box-shadow 0.2s;
 }
-.fa:hover{
+a.fa:visited{
+	color:white;
+}
+a.fa:active{
+	color:white;
+}
+a.fa:hover{
 	background-color:white;
 	color:black;
+	box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
 }
-footer p{
-	text-align:left;
-	font-weight: 100;
-	margin-left: 10px;
-	font-size: 0.8vw;
-	color: white;
+.contact-text{
+	font-size: 15px;
+	color:white;
+	font-weight:lighter;
+	margin: 0;
 }
-/* end of footer */
+/* end of contact*/
+
+
 /* animations */
+/* ----------------------------------------------
+ * Generated by Animista on 2020-3-30 4:1:13
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+/* Decided not to use slide transitions because of the hassle */
+.slide-right {
+	-webkit-animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@-webkit-keyframes slide-right {
+  0% {
+    -webkit-transform: translateZ(-80px);
+            transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-right {
+  0% {
+    -webkit-transform: translateZ(-80px);
+            transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+.slide-left {
+	-webkit-animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@-webkit-keyframes slide-left {
+  0% {
+    -webkit-transform: translateZ(-80px);
+            transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateZ(-80px);
+            transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
 
 /* end of animations */
